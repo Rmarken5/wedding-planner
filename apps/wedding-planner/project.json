@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/wedding-planner/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/wedding-planner",
+        "index": "apps/wedding-planner/src/index.html",
+        "baseHref": "/",
+        "main": "apps/wedding-planner/src/main.tsx",
+        "polyfills": "apps/wedding-planner/src/polyfills.ts",
+        "tsConfig": "apps/wedding-planner/tsconfig.app.json",
+        "assets": [
+          "apps/wedding-planner/src/favicon.ico",
+          "apps/wedding-planner/src/assets"
+        ],
+        "styles": ["apps/wedding-planner/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/wedding-planner/src/environments/environment.ts",
+              "with": "apps/wedding-planner/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "wedding-planner:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "wedding-planner:build:development"
+        },
+        "production": {
+          "buildTarget": "wedding-planner:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/wedding-planner/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/wedding-planner"],
+      "options": {
+        "jestConfig": "apps/wedding-planner/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

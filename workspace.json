@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "wedding-planner": "apps/wedding-planner",
+    "wedding-planner-e2e": "apps/wedding-planner-e2e"
+  }
+}
