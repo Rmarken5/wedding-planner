@@ -13,9 +13,22 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": ["type:page", "type:shared"]
+              },
+              {
+                "sourceTag": "type:page",
+                "onlyDependOnLibsWithTags": ["type:feature", "type:shared"]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": ["type:ui","type:feature", "type:shared", "type:data-access"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:ui", "type:shared"]
               }
+
             ]
           }
         ]
