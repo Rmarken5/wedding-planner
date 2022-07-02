@@ -1,12 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import {PagesHome} from "@marken-shop-react/pages/home";
+import { PagesHome } from '@marken-shop-react/pages/home';
 
 export function App() {
   return (
     <>
-      <PagesHome />
-      <div />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PagesHome />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
