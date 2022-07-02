@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "pages-home": "libs/pages/home",
+    "pages": "libs/pages",
     "wedding-planner": "apps/wedding-planner",
     "wedding-planner-e2e": "apps/wedding-planner-e2e"
   }
