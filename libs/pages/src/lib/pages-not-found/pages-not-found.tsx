@@ -6,7 +6,7 @@ export interface PagesNotFoundProps {}
 export function PagesNotFound(props: PagesNotFoundProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to PagesNotFound!</h1>
+      <h1>Page Not Found!</h1>
     </div>
   );
 }
