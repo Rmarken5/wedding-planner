@@ -1,12 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-
-import {PagesHome} from "@marken-shop-react/pages/home";
+import { Pages } from '@marken-shop-react/pages';
 
 export function App() {
   return (
     <>
-      <PagesHome />
-      <div />
+      <Pages />
     </>
   );
 }

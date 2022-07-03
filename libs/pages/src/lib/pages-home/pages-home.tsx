@@ -6,7 +6,7 @@ export interface PagesHomeProps {}
 export function PagesHome(props: PagesHomeProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to PagesHome!</h1>
+      <h1>Welcome to The Wedding Planner!</h1>
     </div>
   );
 }
