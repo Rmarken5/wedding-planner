@@ -1,13 +1,15 @@
-import styles from './pages-home.module.scss';
-
 /* eslint-disable-next-line */
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface PagesHomeProps {}
 
 export function PagesHome(props: PagesHomeProps) {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to The Wedding Planner!</h1>
-    </div>
+  <div className={"container"}>
+    <h1 className={"h1"}>
+      The Wedding Planner
+    </h1>
+  </div>
   );
 }
 
