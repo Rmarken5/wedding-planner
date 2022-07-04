@@ -2,8 +2,11 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "features-login": "libs/features/login",
-    "pages": "libs/pages",
+    "home-feature-login": "libs/home/feature/login",
+    "home-page-home": "libs/home/page/home",
+    "home-ui-login-form": "libs/home/ui/login-form",
+    "not-found-page-not-found": "libs/not-found/page/not-found",
+    "theme-page-theme": "libs/theme/page/theme",
     "wedding-planner": "apps/wedding-planner",
     "wedding-planner-e2e": "apps/wedding-planner-e2e"
   }

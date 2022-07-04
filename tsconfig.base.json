@@ -15,8 +15,19 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@marken-shop-react/features/login": ["libs/features/login/src/index.ts"],
-      "@marken-shop-react/pages": ["libs/pages/src/index.ts"]
+      "@marken-shop-react/home/feature/login": [
+        "libs/home/feature/login/src/index.ts"
+      ],
+      "@marken-shop-react/home/page/home": ["libs/home/page/home/src/index.ts"],
+      "@marken-shop-react/home/ui/login-form": [
+        "libs/home/ui/login-form/src/index.ts"
+      ],
+      "@marken-shop-react/not-found/page/not-found": [
+        "libs/not-found/page/not-found/src/index.ts"
+      ],
+      "@marken-shop-react/theme/page/theme": [
+        "libs/theme/page/theme/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
