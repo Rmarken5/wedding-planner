@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@marken-shop-react/features/login": ["libs/features/login/src/index.ts"],
       "@marken-shop-react/pages": ["libs/pages/src/index.ts"]
     }
   },
