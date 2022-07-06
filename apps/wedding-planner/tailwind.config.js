@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         sans: ['"Arima"'],
       },
+      container: {
+        center: true,
+      },
     },
   },
   plugins: [],
