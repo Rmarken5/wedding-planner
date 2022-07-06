@@ -1,23 +1,27 @@
-import classes from './home-ui-login-form.module.scss';
-
 /* eslint-disable-next-line */
 export interface HomeUiLoginFormProps {}
 
 export function HomeUiLoginForm(props: HomeUiLoginFormProps) {
   return (
-    <div className="inline-flex flex-col">
-      <section className="mb-4">
-      <section className={classes['margin-bottom']}>
+    <div className="flex flex-col items-center">
+      <section className="block mb-4">
         <label>
-          Username:
-          <input type="text" name="username" />
+          <input
+            placeholder={'Username'}
+            type="text"
+            name="username"
+            className="w-60"
+          />
         </label>
       </section>
-      </section>
-      <section className="block mb-2">
+      <section className="block mb-4 ">
         <label>
-          Password:
-          <input type="password" name="username" />
+          <input
+            placeholder={'Password'}
+            type="password"
+            name="password"
+            className="w-60"
+          />
         </label>
       </section>
     </div>
