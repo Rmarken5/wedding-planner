@@ -1,9 +1,12 @@
-/* eslint-disable-next-line */
-export interface HomeUiLoginFormProps {}
+import React from 'react';
+
+export interface HomeUiLoginFormProps {
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
 
 export function HomeUiLoginForm(props: HomeUiLoginFormProps) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-3/4 mx-auto">
       <section className="block mb-4">
         <label>
           <input
@@ -23,6 +26,12 @@ export function HomeUiLoginForm(props: HomeUiLoginFormProps) {
             className="w-60"
           />
         </label>
+      </section>
+      <section className="flex flex-row w-60 justify-around mt-8">
+        <button className="btn-primary" onClick={props.onClick}>
+          Sign In
+        </button>
+        <button className="btn-accent">Register</button>
       </section>
     </div>
   );
