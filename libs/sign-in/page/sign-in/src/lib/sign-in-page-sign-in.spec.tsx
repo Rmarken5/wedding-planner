@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import HomePageHome from './home-page-home';
+import HomePageHome from './sign-in-page-sign-in';
 
 describe('HomePageHome', () => {
   it('should render successfully', () => {

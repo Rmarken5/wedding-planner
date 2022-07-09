@@ -10,17 +10,22 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@marken-shop-react/home/feature/login": [
-        "libs/home/feature/login/src/index.ts"
+      "@marken-shop-react/sign-in/feature/sign-in": [
+        "libs/sign-in/feature/sign-in/src/index.ts"
       ],
-      "@marken-shop-react/home/page/home": ["libs/home/page/home/src/index.ts"],
-      "@marken-shop-react/home/ui/login-form": [
-        "libs/home/ui/login-form/src/index.ts"
+      "@marken-shop-react/sign-in/page/sign-in": [
+        "libs/sign-in/page/sign-in/src/index.ts"
+      ],
+      "@marken-shop-react/sign-in/ui/sign-in-form": [
+        "libs/sign-in/ui/sign-in-form/src/index.ts"
       ],
       "@marken-shop-react/not-found/page/not-found": [
         "libs/not-found/page/not-found/src/index.ts"
@@ -30,5 +35,8 @@
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

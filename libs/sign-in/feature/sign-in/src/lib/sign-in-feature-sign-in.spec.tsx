@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import HomeFeatureLogin from './home-feature-login';
+import HomeFeatureLogin from './sign-in-feature-sign-in';
 
 describe('HomeFeatureLogin', () => {
   it('should render successfully', () => {

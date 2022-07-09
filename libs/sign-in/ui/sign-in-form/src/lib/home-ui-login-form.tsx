@@ -1,10 +1,10 @@
 import React from 'react';
 
-export interface HomeUiLoginFormProps {
+export interface SignInUiSignInFormProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export function HomeUiLoginForm(props: HomeUiLoginFormProps) {
+export function SignInUiSignInForm(props: SignInUiSignInFormProps) {
   return (
     <div className="flex flex-col items-center w-3/4 mx-auto">
       <section className="block mb-4">
@@ -37,4 +37,4 @@ export function HomeUiLoginForm(props: HomeUiLoginFormProps) {
   );
 }
 
-export default HomeUiLoginForm;
+export default SignInUiSignInFormProps;
