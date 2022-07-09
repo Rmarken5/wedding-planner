@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sign-in/page/sign-in/src",
+  "projectType": "library",
+  "tags": [
+    "type:page"
+  ],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/sign-in/page/sign-in/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/sign-in/page/sign-in"
+      ],
+      "options": {
+        "jestConfig": "libs/sign-in/page/sign-in/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

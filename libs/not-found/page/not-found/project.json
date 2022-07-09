@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/not-found/page/not-found/src",
+  "projectType": "library",
+  "tags": ["type:pages"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/not-found/page/not-found/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/not-found/page/not-found"],
+      "options": {
+        "jestConfig": "libs/not-found/page/not-found/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
