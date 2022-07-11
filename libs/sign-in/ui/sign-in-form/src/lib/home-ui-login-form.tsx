@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export interface SignInUiSignInFormProps {
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  signInLink: string;
 }
 
 export function SignInUiSignInForm(props: SignInUiSignInFormProps) {
@@ -28,9 +30,11 @@ export function SignInUiSignInForm(props: SignInUiSignInFormProps) {
         </label>
       </section>
       <section className="flex flex-row w-60 justify-around mt-8">
-        <button className="btn-primary" onClick={props.onClick}>
-          Sign In
-        </button>
+        <Link to={props.signInLink}>
+          <button className="btn-primary" onClick={props.onClick}>
+            Sign In
+          </button>
+        </Link>
         <button className="btn-accent">Register</button>
       </section>
     </div>

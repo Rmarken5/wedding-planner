@@ -2,7 +2,8 @@ import { SignInUiSignInForm } from '@marken-shop-react/sign-in/ui/sign-in-form';
 import React from 'react';
 
 export interface HomeFeatureLoginProps {
-  loginClick: () => void;
+  loginClick?: () => void;
+  signInLink: string;
 }
 
 export class SignInFeatureSignIn extends React.Component<HomeFeatureLoginProps> {
@@ -14,7 +15,10 @@ export class SignInFeatureSignIn extends React.Component<HomeFeatureLoginProps> 
     return (
       <div className={'container'}>
         <h1 className="h1 text-center">Welcome to The Wedding Planner</h1>
-        <SignInUiSignInForm onClick={this.props.loginClick} />
+        <SignInUiSignInForm
+          onClick={this.props.loginClick}
+          signInLink={this.props.signInLink}
+        />
       </div>
     );
   }
