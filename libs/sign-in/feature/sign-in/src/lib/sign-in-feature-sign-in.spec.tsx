@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import HomeFeatureLogin from './sign-in-feature-sign-in';
+import { SignInFeatureSignIn } from './sign-in-feature-sign-in';
 
-describe('HomeFeatureLogin', () => {
+describe('SignInFeatureSignIn', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<HomeFeatureLogin />);
+    const { baseElement } = render(<SignInFeatureSignIn />);
     expect(baseElement).toBeTruthy();
   });
 });
