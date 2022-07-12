@@ -35,7 +35,7 @@ jobs:
 #          name: code-coverage-report
 #          path: output/test/code-coverage.html
       - name: Build
-        run: docker build -t gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
+        run: docker build . -t gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
       - name: Authenticate into Google Cloud Platform
         uses: google-github-actions/setup-gcloud@v0
         with:
