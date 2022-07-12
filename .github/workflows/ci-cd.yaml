@@ -22,16 +22,16 @@ on:
             run: npm run test
           - name: Archive production artifacts
             uses: actions/upload-artifact@v3
-              with:
-                name: dist-without-markdown
-                path: |
-                  dist
-                  !dist/**/*.md
-                  - name: Archive code coverage results
-                    uses: actions/upload-artifact@v3
-                    with:
-                      name: code-coverage-report
-                      path: output/test/code-coverage.html
+            with:
+              name: dist-without-markdown
+              path: |
+                dist
+                !dist/**/*.md
+          - name: Archive code coverage results
+            uses: actions/upload-artifact@v3
+            with:
+              name: code-coverage-report
+              path: output/test/code-coverage.html
           - name: Build
             run: docker build -t gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
           - name: Authenticate into Google Cloud Platform
@@ -40,11 +40,11 @@ on:
                  service_account_email: ${{ secrets.WP_GH_ACTION_DEV_EMAIL }}
                  service_account_key: ${{ secrets.WP_GH_ACTION_DEV_AUTH }}
           - name: Configure Docker to use Google Cloud Platform
-              run: "gcloud auth configure-docker --quiet"
+            run: "gcloud auth configure-docker --quiet"
           - name: Push image to Google Cloud Container Registry
-              run: docker push gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
-            - name: Install beta commands and deploy on cloud run
-                run: |
+            run: docker push gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
+          - name: Install beta commands and deploy on cloud run
+             run: |
                   gcloud components install beta --quiet
                   gcloud beta run deploy ${{ secrets.GCLOUD_APP_NAME }} --quiet --image gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }} --project ${{ secrets.GCLOUD_PROJECT }} --region us-central1 --platform managed
 
