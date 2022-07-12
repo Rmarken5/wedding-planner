@@ -44,6 +44,7 @@ export class App extends React.Component<any, AppState> {
   }
 
   override render() {
+    console.log(this.state);
     return (
       <div className={'h-screen bg-cyan-100'}>
         <BrowserRouter>
