@@ -1,7 +1,11 @@
 name: The Wedding Planner Front End
 
 on:
-  [pull_request, push]:
+  [push, pull_request]:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+      - dev
     jobs:
       build_and_test:
         runs-on: ubuntu-latest
