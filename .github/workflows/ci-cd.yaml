@@ -6,6 +6,7 @@ on:
     branches: [ "dev" ]
 jobs:
   build_and_test:
+    environment: dev
     name: I hate yaml
     runs-on: ubuntu-latest
     steps:
