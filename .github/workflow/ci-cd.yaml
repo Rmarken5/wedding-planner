@@ -1,7 +1,7 @@
 name: The Wedding Planner Front End
 
 on:
-  push:
+  merge:
     branches:
       - master
       - dev
