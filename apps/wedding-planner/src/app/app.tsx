@@ -10,6 +10,8 @@ import { NotFoundPageNotFound } from '@marken-shop-react/not-found/page/not-foun
 import React from 'react';
 import { ThemePageTheme } from '@marken-shop-react/theme/page/theme';
 import { ProtectedRouteSharedProps } from '@marken-shop-react/protected-route/shared';
+import { initializeApp } from 'firebase/app';
+import { environment } from '../environments/environment';
 
 interface AppState {
   isAuthenticated: boolean;
@@ -29,10 +31,14 @@ const ProtectedRouteShared = ({
 
 export class App extends React.Component<any, AppState> {
   constructor(props: any) {
+    console.log(environment);
     super(props);
     this.state = {
       isAuthenticated: false,
     };
+    const firebaseConfig = {};
+
+    const app = initializeApp(firebaseConfig);
   }
 
   private loginClick() {
