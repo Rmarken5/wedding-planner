@@ -12,9 +12,11 @@ import { ThemePageTheme } from '@marken-shop-react/theme/page/theme';
 import { ProtectedRouteSharedProps } from '@marken-shop-react/protected-route/shared';
 import { initializeApp } from 'firebase/app';
 import { environment } from '../environments/environment';
+import { getAuth, signInWithEmailAndPassword, User } from 'firebase/auth';
 
 interface AppState {
-  isAuthenticated: boolean;
+  user?: User;
+  signInError?: string | null;
 }
 
 const ProtectedRouteShared = ({
@@ -33,19 +35,31 @@ export class App extends React.Component<any, AppState> {
   constructor(props: any) {
     console.log(environment);
     super(props);
-    this.state = {
-      isAuthenticated: false,
-    };
-    const firebaseConfig = {};
+    this.state = {};
+    const { firebaseConfig } = environment;
 
     const app = initializeApp(firebaseConfig);
   }
 
-  private loginClick() {
-    this.setState({
-      ...this.state,
-      isAuthenticated: true,
-    });
+  private async loginClick(email: string, password: string) {
+    const auth = getAuth();
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      response.user;
+      this.setState({
+        ...this.state,
+        user: response.user,
+        signInError: null,
+      });
+    } catch (error: any) {
+      console.log('error: ', error);
+      this.setState({
+        ...this.state,
+        user: undefined,
+        signInError: error.message as string,
+      });
+    }
+
     console.log(this.state);
   }
 
@@ -57,9 +71,7 @@ export class App extends React.Component<any, AppState> {
           <Routes>
             <Route
               element={
-                <ProtectedRouteShared
-                  isAuthenticated={this.state.isAuthenticated}
-                />
+                <ProtectedRouteShared isAuthenticated={!!this.state?.user} />
               }
             >
               <Route path="/theme" element={<ThemePageTheme />} />
@@ -68,8 +80,9 @@ export class App extends React.Component<any, AppState> {
               path="/sign-in"
               element={
                 <SignInPageSignIn
-                  loginClick={() => this.loginClick()}
+                  loginClick={this.loginClick.bind(this)}
                   signInLink={'/theme'}
+                  signInError={this.state.signInError}
                 />
               }
             />
