@@ -2,8 +2,9 @@ import { SignInFeatureSignIn } from '@marken-shop-react/sign-in/feature/sign-in'
 import React from 'react';
 
 export interface HomePageHomeProps {
-  loginClick?: () => void;
+  loginClick: (email: string, password: string) => Promise<void>;
   signInLink: string;
+  signInError?: string | null;
 }
 
 export class SignInPageSignIn extends React.Component<HomePageHomeProps> {
@@ -18,6 +19,7 @@ export class SignInPageSignIn extends React.Component<HomePageHomeProps> {
           loginClick={this.props.loginClick}
           signInLink={this.props.signInLink}
         />
+        {!!this.props?.signInError && <div>{this.props.signInError}</div>}
       </div>
     );
   }
