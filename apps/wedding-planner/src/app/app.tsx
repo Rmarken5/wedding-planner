@@ -13,6 +13,7 @@ import { initializeApp } from 'firebase/app';
 import { environment } from '../environments/environment';
 import { getAuth, signInWithEmailAndPassword, User } from 'firebase/auth';
 import { SignInPageSignIn } from '@marken-shop-react/sign-in/page/sign-in';
+import { HomePageHome } from '@marken-shop-react/home/page/home';
 
 interface AppState {
   user?: User;
@@ -87,7 +88,7 @@ export class App extends React.Component<any, AppState> {
           element={
             <SignInPageSignIn
               loginClick={this.loginClick.bind(this)}
-              signInLink={'/theme'}
+              signInLink={'/'}
               signInError={this.state.signInError}
             />
           }
@@ -100,7 +101,7 @@ export class App extends React.Component<any, AppState> {
             <ProtectedRouteShared isAuthenticated={!!this.state?.user} />
           }
         >
-          <Route path="/" element={<ThemePageTheme />} />
+          <Route path="/" element={<HomePageHome />} />
         </Route>
       );
     }

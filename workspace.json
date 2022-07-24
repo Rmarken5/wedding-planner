@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "home-feature-home": "libs/home/feature/home",
+    "home-page-home": "libs/home/page/home",
     "not-found-page-not-found": "libs/not-found/page/not-found",
     "protected-route-shared": "libs/protected-route/shared",
     "sign-in-feature-sign-in": "libs/sign-in/feature/sign-in",

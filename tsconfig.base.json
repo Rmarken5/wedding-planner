@@ -15,6 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@marken-shop-react/home/feature/home": [
+        "libs/home/feature/home/src/index.ts"
+      ],
+      "@marken-shop-react/home/page/home": ["libs/home/page/home/src/index.ts"],
       "@marken-shop-react/not-found/page/not-found": [
         "libs/not-found/page/not-found/src/index.ts"
       ],
